@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Chapter 10. Data Science Application</title>
+	<!--  CSS -->
+	<!--BOOTSTRAP -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">  
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+	<!--END BOOTSTRAP -->
+	<!--DC -->
+	<link rel="stylesheet" href="dc.css">
+	<!--END DC -->
+	<!--OWN CSS -->
+	<link rel="stylesheet" href="application.css">
+	<!--END OWN CSS -->
+	<!--  END CSS -->
+</head>
+<body>
+	<main class='container'>
+		<!-- layout:
+				title
+				|  input table                                      | (row 1)
+				|  filtered table                                   | (row 2)
+				[ reset button ]
+				|  stock-over-time chart | stock-per-medicine chart | (row 3)
+				|  light-sensitive chart |                          | (row 4)
+				        (column 1)               (column 2)
+		-->
+		<h1>Chapter 10:  Data Science Application</h1>
+		<div class="row">
+			<div class='col-lg-12'>
+				<div id="inputtable" class="well well-sm"></div>
+				<!-- this is a placeholder <div> for a table inserted later -->
+			</div>
+		</div>   
+		<div class="row">
+			<div class='col-lg-12'>
+			    <div id="filteredtable" class="well well-sm"></div>
+			    <!-- this is a placeholder <div> for a table inserted later -->
+			</div>
+		</div>   
+		<button class="btn btn-success">Reset Filters</button>
+		<div class="row">
+			<div class="col-lg-6">
+				<div id="StockOverTime" class="well well-sm"></div>  
+				<div id="LightSensitiveStock" class="well well-sm"></div> 
+			</div>
+			<div class="col-lg-6">
+				<div id="StockPerMedicine" class="well well-sm"></div> 
+			</div>
+		</div>
+                <!-- Error handling --> 
+                <!-- this is not part of the actual tutorial, It is a preventive measure to intervene in case someone tries to open the index.html file in  the browser without an active server-->
+		<div class='err hide jumbotron alert-danger'>
+			<h2>Download of the CSV Data Failed</h2>
+			<div data-http='true' class='hide'>
+				<p>This is unexpected.</p>
+				<p>Please confirm that the samples are downloaded correctly.<p>
+				<p>Error detail:  <em></em></p>
+			</div>
+			<div data-http='false' class='hide'>
+				<p>It looks like you double-clicked the file <code>index.html</code>.</p>
+				<p>That will not work (Unless in some versions of Firefox)</p>
+				<p>HTTP is required.  Enabling this is simple as you don't need a full web server.</p>
+				<p>Please see the book's instructions on server setup.</p>
+			</div>
+		</div>
+                <!-- End error handling -->
+	</main>
+	<!-- Standard practice.  JS libraries are last to speed page load.
+			jQuery:       vital HTML-JavaScript interaction
+			bootstrap:    simplified CSS and layout from folks at Twitter
+			Crossfilter:  our JavaScript MapReduce library of choice
+			d3:           the d3 script, necessary to run dc.js
+			DC:           our visualization library
+			application:  our data science application, here we store all the logic
+
+			*.min.js denotes minified Javascript for our 3rd party libraries
+	-->
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script> 
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <!-- crossfilter,d3 and dc libraries can be downloaded from their respective websites or are included in the example -->
+	<script src="crossfilter.min.js"></script>
+	<script src="d3.v3.min.js"></script>
+	<script src="dc.min.js"></script>
+        <!-- our own application --> 
+	<script src="application.js"></script>
+</body>
+</html>

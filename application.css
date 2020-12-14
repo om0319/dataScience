@@ -1,0 +1,15 @@
+.dc-chart g.row text {fill: black;}
+
+/* size to fit each dc-chart div to its container */
+.dc-chart { width:100% }
+
+/* vertical spacing to keep main content away from edges */
+main { padding: 4mm 0mm; }
+
+/* off-white background to help readability of text on charts */
+body { background-color: #f8f8f8; }
+
+/* darken the gray used by bootstrap table hover */
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #c0c0c0;
+}
